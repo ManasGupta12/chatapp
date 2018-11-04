@@ -3,10 +3,7 @@ var socket=io();
        console.log('connected to server');
      
 
-		socket.emit('createMessage',{
-         from:`ram`,
-         text:`This is Hari here!!!!`
-		});
+		
 	});
 		
 

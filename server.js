@@ -1,6 +1,6 @@
 const path=require('path');
 const express =require('express');
-const socket=require('socket.io');
+const socket=require('./node_modules/socket.io');
 const http=require('http');
 
 

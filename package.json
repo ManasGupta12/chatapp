@@ -2,10 +2,10 @@
   "name": "chatapp",
   "version": "1.0.0",
   "description": "",
-  "main": "index.html",
+  "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "test": "mocha utils/*.test.js",
+    "test": "SET \"NODE_ENV=test\" && mocha server/**/*.test.js --timeout=5000",
     "test-w": "nodemon --exec \" npm test\""
   },
   "engines": {

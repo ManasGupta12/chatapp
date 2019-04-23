@@ -17,7 +17,7 @@ var io=socket(server);
 var users=new Users();
 
 app.use(express.static(publicpath));
-
+app.set( 'port', ( process.env.PORT || 3000 ));
 
 const mongoose=require('mongoose');
 var  Schema=mongoose.Schema;
@@ -106,7 +106,7 @@ socket.on('disconnect',()=>{
 		}
 	});
 });
-var port=3000;
-server.listen(port,()=>{
-	console.log(`server is up on port ${port}`);
+
+server.listen(app.get( 'port' ), function() {
+	console.log('server is up on port'+ app.get( 'port' ) );
 });

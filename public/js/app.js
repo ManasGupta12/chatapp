@@ -11,7 +11,15 @@ function handleError(error) {
 }
 
 // (optional) add server code here
-initializeSession();
+var SERVER_BASE_URL = 'https://serene-lowlands-99533.herokuapp.com';
+    fetch(SERVER_BASE_URL + '/session').then(function(res) {
+      return res.json()
+    }).then(function(res) {
+      apiKey = res.apiKey;
+      sessionId = res.sessionId;
+      token = res.token;
+      initializeSession();
+    }).catch(handleError);
 
 function initializeSession() {
   var session = OT.initSession(apiKey, sessionId);
